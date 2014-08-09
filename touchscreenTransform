@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "$1"
+if [ "$1" = "normal" ]
+    then
+        xinput set-prop 'ELAN Touchscreen' 'Coordinate Transformation Matrix' 1 0 0 0 1 0 0 0 1 
+elif [ "$1" = "left" ]
+    then
+        xinput set-prop 'ELAN Touchscreen' 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1 
+elif [ "$1" = "right" ]
+    then
+        xinput set-prop 'ELAN Touchscreen' 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1 
+else
+    xinput list-props 'ELAN Touchscreen' | grep "Coordinate Transformation Matrix"
+fi

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xinput list-props 'SynPS/2 Synaptics TouchPad' | grep "Coordinate Transformation Matrix"

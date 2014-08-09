@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ "$1" = "left" -o "$1" = "right" ]
+    then
+        rot="$1"
+    else
+        rot="normal"
+fi
+echo "$rot"
+xrandr --output eDP1 --primary --mode 3200x1800 --rotate normal --rotate "$rot"
+touchscreenTransform "$rot"
+mouseTransform "$rot"
+
